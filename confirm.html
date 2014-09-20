@@ -1,0 +1,87 @@
+<html>
+<head>
+	<title>DAS BRUNCH</title>
+	<script>
+		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+		ga('create', 'UA-49742060-2', 'dasbrun.ch');
+		ga('send', 'pageview');
+	</script>
+	<script type="text/javascript"> <!-- KEEN.IO -->
+    var Keen=Keen||{configure:function(e){this._cf=e},addEvent:function(e,t,n,i){this._eq=this._eq||[],this._eq.push([e,t,n,i])},setGlobalProperties:function(e){this._gp=e},onChartsReady:function(e){this._ocrq=this._ocrq||[],this._ocrq.push(e)}};(function(){var e=document.createElement("script");e.type="text/javascript",e.async=!0,e.src=("https:"==document.location.protocol?"https://":"http://")+"dc8na2hxrj29i.cloudfront.net/code/keen-2.1.0-min.js";var t=document.getElementsByTagName("script")[0];t.parentNode.insertBefore(e,t)})();
+    Keen.configure({
+        projectId: "52ed403cd97b8532b5000010",
+        writeKey: "9209cd2cb894c10c4c731f10aee9c0f6f4bf6c1fe7bd688946546bf12ff39aa1e564bb5ae59f40b2e9f1e5ad93e911a17fed72ce6793db26a36ae20b16581735fe1c5404cf476700c1659baa4df250ab0ab57f17e58569085b4b2d94b471974e41dacc9126fec5e84d8647bdcd8d1a84", // required for sending events
+    });
+	</script>
+	<!--<link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.4.2/pure-min.css">-->
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+	
+	<!-- production assets -->
+	<script src="../assets/view.js"></script>
+	<link href="../assets/view.css" rel="stylesheet">
+
+	<!-- local testing assets -->
+	<!--<script src="view.js"></script>
+	<link href="view.css" rel="stylesheet">-->
+	
+	<link href='//fonts.googleapis.com/css?family=Merriweather:400,400italic,700,700italic|Merriweather+Sans:800' rel='stylesheet' type='text/css'>
+	<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/>
+	
+	<!-- pull 'brunch' image from Giphy-->
+	<script>
+		// event listeners.
+		document.addEventListener('DOMContentLoaded', function () {
+			getGIF();
+		});
+
+		// giphy API call
+		function getGIF(){
+			request = new XMLHttpRequest;
+			request.open('GET', 'http://api.giphy.com/v1/gifs/random?api_key=dc6zaTOxFJmzC&tag=brunch', true);
+
+			request.onload = function() {
+				if (request.status >= 200 && request.status < 400){
+					data = JSON.parse(request.responseText).data.image_url;
+					console.log(data);
+					document.getElementById("imgbox").innerHTML = '<center><img style="text-align:center;" src = "'+data+'"  title="Brunch according to Giphy"></center>';
+				} else {
+						console.log('reached giphy, but it returned an error');
+				 }
+			};
+
+			request.onerror = function() {
+				console.log('connection error');
+			};
+
+			request.send();
+		}
+	</script>
+	
+</head>
+
+<body>
+	<div class = "sHead">
+		<div class="options">
+			<span class="pointer active"><a href="/" class="logolink">DAS BRUNCH</a></span>		
+		</div>
+	</div>
+  
+  <div id = "container">
+		<div id = "header">&nbsp;</div>  
+		<div id = "content" style="text-align:center;">
+			<p class="indexhead">Awesome, now one last thing&hellip;</p>
+			<p>Please click the link in the email we just sent you.</p>
+			
+			<div id = "imgbox"></div>
+
+			<p>&copy; 2014 &bull; <a href="http://nealshyam.com" title="Neal Shyam" target="_blank">Neal Shyam</a></p>
+
+		</div>
+	</div>
+</body>
+</html>

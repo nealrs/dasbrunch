@@ -1,0 +1,39 @@
+<html>
+<head>
+	<title>Bachelor Brunch</title>
+
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+	<script src="view.js"></script>
+	<link href="view.css" rel="stylesheet">
+	<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/>
+</head>
+
+<body>
+	<div class = "sHead">
+		<div class="options">
+			<span class="pointer active" id = "menu" onclick="menu()" style="margin-right:10px;"><a title="Menu"><i class="fa fa-bars fa-fw fa-lg"></i></a></span>
+
+			<span class="pointer active"><a style="margin-right:10px;margin-left:10px; font-weight: 700;
+			font-style:normal;
+			font-size: 18px;
+			line-height: 22px;">Bachelor Brunch</a></span>
+
+			<span class="pointer active" id="exit" onclick="exitTS()" title="Exit & view without header" style="margin-left:10px;"><i class='fa fa-times fa-fw fa-lg'></i></a></span>
+
+		</div>
+		<div class="menurail">
+			<!--<span class="pointer active"><a href="#" title="Vote up"><i class="fa fa-thumbs-up fa-fw"></i></a></span>&nbsp;&nbsp;
+			<span class="pointer active"><a href="#" title="Vote down"><i class="fa fa-thumbs-down fa-fw"></i></a></span>&nbsp;&nbsp;-->
+
+			<span class="pointer active" onclick="tshare()"><i class="fa fa-twitter fa-fw fa-lg"></i></span>&nbsp; &nbsp;
+			<span class="pointer active" onclick="fshare()"><i class="fa fa-facebook fa-fw fa-lg"></i></span>&nbsp; &nbsp;
+			<span class="pointer active" onclick="gshare()"><i class="fa fa-google-plus fa-fw fa-lg"></i></span>&nbsp; &nbsp;
+			<span class="pointer active" onclick="lshare()"><i class="fa fa-linkedin fa-fw fa-lg"></i></span>&nbsp; &nbsp;
+			<span class="pointer active" onclick="eshare()"><i class="fa fa-envelope fa-fw fa-lg"></i></span>
+		</div>
+	</div>
+  <iframe id="frame"></iframe>
+
+</body>
+</html>
