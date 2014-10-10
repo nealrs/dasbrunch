@@ -44,6 +44,23 @@ pullquote:before {
 	vertical-align: -0.4em;
 }
 
+.pullquote {
+	background: #f9f9f9;
+	border-left: 5px solid #ccc;
+	margin: 1.5em 10px;
+	padding: 0.5em 10px;
+	quotes: "\201C""\201D""\2018""\2019";
+}
+
+.pullquote:before {
+	color: #ccc;
+	font-size: 4em;
+	line-height: 0.1em;
+	margin-right: 0.25em;
+	vertical-align: -0.4em;
+}
+
+
 img, embed, iframe, object {
 	max-width:98%;
 	text-align:center;
@@ -218,3 +235,6 @@ hr{
 	line-height: 1.75;
 
 }
+
+.caption{font-style:italic;}
+.credit{font-style:italic; color:#AAAAAA;}

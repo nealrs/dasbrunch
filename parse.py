@@ -22,8 +22,11 @@ def strip (html):
 	html = re.sub(u'[\u2120]', '(sm)', html)
 	# Replace trademark symbol
 	html = re.sub(u'[\u2122]', '(tm)', html)
-	# Replace en dash
+	# Replace em & em dashes
 	html = re.sub(u'[\u2013]', '&ndash;', html)
+	html = re.sub(u'[\u2014]', '&mdash;', html)
+	# weird hyphen replace
+	html = re.sub(u'[\xad]', '&shy;', html)
 	# Replace/clobber any remaining UTF-8 characters that aren't in ISO-8859-1
 	return fix_text(html)
 	#return (html)
@@ -45,7 +48,7 @@ for u in sys.argv:
 
 		# process template
 		template = unicode(open("template.html","r").read())
-		html = pystache.render(template,{ 'url':p.content['url'], 'title':p.content['title'], 'author':p.content['author'], 'publisher': p.content['domain'], 'content':p.content['content'], 'time':time })
+		html = pystache.render(template,{ 'url':p.content['url'], 'title':p.content['title'], 'author':p.content['author'], 'publisher': p.content['domain'], 'content':p.content['content'], 'time':time, 'order':i })
 
 		print "HTML output: " + html
 
