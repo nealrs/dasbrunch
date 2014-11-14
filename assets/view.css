@@ -238,3 +238,6 @@ hr{
 
 .caption{font-style:italic;}
 .credit{font-style:italic; color:#AAAAAA;}
+
+form, label  {font-family: 'Merriweather', Palatino, Droid Serif, Georgia, serif !important;
+}

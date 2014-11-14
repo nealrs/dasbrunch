@@ -1,8 +1,10 @@
+#!/usr/bin/env python
 from readability import ParserClient
 import pystache
 import sys
 import re
 from ftfy import fix_text
+import codecs
 
 # readability api key
 parser = ParserClient('877f0069c46e0603a7d5868fab7d50731817dd9f')
@@ -38,7 +40,7 @@ for u in sys.argv:
 		i=i+1
 		pass
 	else:
-		print "processing URL :" + u
+		print "processing URL: " + u
 
 		# get parse article
 		p = parser.get_article_content(u)
@@ -57,6 +59,7 @@ for u in sys.argv:
 
 		html = strip(html)
 
+		#f.write(html.encode('utf-8'))
 		f.write(html)
 		f.close()
 		i=i+1

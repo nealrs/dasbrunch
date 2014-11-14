@@ -1,0 +1,63 @@
+<html>
+<head>
+	<title>DAS BRUNCH</title>
+
+	<!-- production assets -->
+	<script src="../assets/view.js"></script>
+	<link href="../assets/view.css" rel="stylesheet">
+
+	<link href='//fonts.googleapis.com/css?family=Merriweather:400,400italic,700,700italic|Merriweather+Sans:800' rel='stylesheet' type='text/css'>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/>
+
+	<!-- pull 'thanks' image from Giphy-->
+	<script>
+		// event listeners.
+		document.addEventListener('DOMContentLoaded', function () {
+			getGIF();
+		});
+
+		// giphy API call
+		function getGIF(){
+			request = new XMLHttpRequest;
+			request.open('GET', 'http://api.giphy.com/v1/gifs/random?api_key=dc6zaTOxFJmzC&tag=thanks', true);
+
+			request.onload = function() {
+				if (request.status >= 200 && request.status < 400){
+					data = JSON.parse(request.responseText).data.image_url;
+					console.log(data);
+					document.getElementById("imgbox").innerHTML = '<center><img style="text-align:center;" src = "'+data+'"  title="Thanks according to Giphy"></center>';
+				} else {
+						console.log('reached giphy, but it returned an error');
+				 }
+			};
+
+			request.onerror = function() {
+				console.log('connection error');
+			};
+
+			request.send();
+		}
+	</script>
+
+</head>
+
+<body>
+	<div class = "sHead">
+		<div class="options">
+			<span class="pointer active"><a href="/" class="logolink">DAS BRUNCH</a></span>
+		</div>
+	</div>
+
+  <div id = "container">
+		<div id = "header">&nbsp;</div>
+		<div id = "content" style="text-align:center;">
+			<p class="indexhead">Thanks for RSVPing, we'll see you on Nov. 8th!</p>
+
+			<div id = "imgbox"></div>
+
+			<p>&copy; 2014 &bull; <a href="http://nealshyam.com" title="Neal Shyam" target="_blank">Neal Shyam</a></p>
+
+		</div>
+	</div>
+</body>
+</html>
