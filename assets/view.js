@@ -3,13 +3,13 @@ Bachelor Brunch, Copyright (c) 2014 Neal Shyam <http://www.nealshyam.com>
 ==============================================================================*/
 
 function tshare(){
-	trackTweet();
+	//trackTweet();
 	window.open("https://twitter.com/intent/tweet?text=great%20%23brunch%20reading%3A&url="+encodeURIComponent(window.location.href));
 
 	//window.location.href = "https://twitter.com/intent/tweet?text=great read from @nealrs:&url="+encodeURIComponent(window.location.href);
 }
 function eshare(){
-	trackEmail();
+	//trackEmail();
 	window.open("mailto:?&subject=I think you'll like this article &body="+encodeURIComponent(window.location.href));
 
 	//window.location.href = "mailto:?&subject=I think you'll like this article &body="+encodeURIComponent(window.location.href);

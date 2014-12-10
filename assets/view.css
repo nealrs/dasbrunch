@@ -71,6 +71,10 @@ img, embed, iframe, object {
   overflow:auto;
 }
 
+figure {
+	text-align:center;
+}
+
 table {
 	max-width:98%;
 	width:98%;
