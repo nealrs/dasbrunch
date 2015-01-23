@@ -52,7 +52,7 @@ for u in sys.argv:
 		template = unicode(open("template.html","r").read())
 		html = pystache.render(template,{ 'url':p.content['url'], 'title':p.content['title'], 'author':p.content['author'], 'publisher': p.content['domain'], 'content':p.content['content'], 'time':time, 'order':i })
 
-		print "HTML output: " + html
+		print "HTML output: " + html.encode('utf-8')
 
 		# write out HTML - but remember, need to check for missing data like usually author name
 		f = open(str(i)+'.html', 'w')
@@ -60,6 +60,6 @@ for u in sys.argv:
 		html = strip(html)
 
 		#f.write(html.encode('utf-8'))
-		f.write(html)
+		f.write(html.encode('utf-8'))
 		f.close()
 		i=i+1
