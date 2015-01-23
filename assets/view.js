@@ -2,22 +2,15 @@
 Bachelor Brunch, Copyright (c) 2014 Neal Shyam <http://www.nealshyam.com>
 ==============================================================================*/
 
-function tshare(){
-	//trackTweet();
-	window.open("https://twitter.com/intent/tweet?text=great%20%23brunch%20reading%3A&url="+encodeURIComponent(window.location.href));
-
-	//window.location.href = "https://twitter.com/intent/tweet?text=great read from @nealrs:&url="+encodeURIComponent(window.location.href);
+function tshare(){	window.open("https://twitter.com/intent/tweet?text=great%20%23brunch%20reading%3A&url="+encodeURIComponent(window.location.href));
 }
-function eshare(){
-	//trackEmail();
-	window.open("mailto:?&subject=I think you'll like this article &body="+encodeURIComponent(window.location.href));
 
-	//window.location.href = "mailto:?&subject=I think you'll like this article &body="+encodeURIComponent(window.location.href);
+function eshare(){
+	window.open("mailto:?&subject=I think you'll like this article &body="+encodeURIComponent(window.location.href));
 }
 
 /*responsive iframes via https://gist.github.com/aarongustafson/1313517*/
-function adjustIframes()
-{
+function adjustIframes(){
   $('iframe').each(function(){
     var
     $this       = $(this),
@@ -40,7 +33,6 @@ function adjustIframes()
 $(window).on('resize load',adjustIframes);
 
 // initliaze scroll depth tracking
-
 $(function() {
   $.scrollDepth({elements: ['#vote'],
 	pixelDepth: false
